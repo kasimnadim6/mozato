@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Card from '../UI/Card';
+import MealItem from './MealItem/MealItem';
 
 const DUMMY_MEALS = [
   {
@@ -30,39 +32,44 @@ const DUMMY_MEALS = [
 const AvailableMeals = () => {
   return (
     <StyledAvailableMeals>
-      <ul>
-        {DUMMY_MEALS.map((meal) => (
-          <li>{meal.name}</li>
-        ))}
-      </ul>
+      <Card>
+        <ul>
+          {DUMMY_MEALS.map((meal) => (
+            <MealItem
+              key={meal.id}
+              id={meal.id}
+              name={meal.name}
+              description={meal.description}
+              price={meal.price}
+            />
+          ))}
+        </ul>
+      </Card>
     </StyledAvailableMeals>
   );
 };
 
 export default AvailableMeals;
 
-const StyledAvailableMeals = styled.section``;
-// meals {
-//     max-width: 60rem;
-//     width: 90%;
-//     margin: 2rem auto;
-//     animation: meals-appear 1s ease-out forwards;
-//   }
+const StyledAvailableMeals = styled.section`
+  max-width: 60rem;
+  width: 90%;
+  margin: 1.5rem auto;
+  animation: meals-appear 1s ease-out forwards;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @keyframes meals-appear {
+    from {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
 
-//   .meals ul {
-//     list-style: none;
-//     margin: 0;
-//     padding: 0;
-//   }
-
-//   @keyframes meals-appear {
-//     from {
-//       opacity: 0;
-//       transform: translateY(3rem);
-//     }
-
-//     to {
-//       opacity: 1;
-//       transform: translateY(0);
-//     }
-//   }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
