@@ -1,9 +1,9 @@
 import CartIcon from '../../assets/icons/CartIcon';
 import classes from './HeaderCartButton.module.scss';
 
-const HeaderCartButton = () => {
+const HeaderCartButton = ({ onClick }) => {
   return (
-    <button className={classes.button}>
+    <button className={classes.button} onClick={onClick}>
       <span className={classes.icon}>
         <CartIcon />
       </span>
