@@ -5,7 +5,7 @@ const initialState = {
   items: [],
   totalAmount: 0,
 };
-const cartReducer = (state = initialState, action) => {
+const cartReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
       let updatedItems;
