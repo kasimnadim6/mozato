@@ -28,6 +28,8 @@
     text-align: center;
     height: 2.8rem;
     width: 2.8rem;
+    display: flex;
+    justify-content: center;
   }
   &:hover .badge,
   &:active .badge {
