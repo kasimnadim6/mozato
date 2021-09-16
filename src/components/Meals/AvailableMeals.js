@@ -64,7 +64,7 @@ const StyledAvailableMeals = styled.section`
   @keyframes meals-appear {
     from {
       opacity: 0;
-      transform: translateY(3rem);
+      transform: translateY(5rem);
     }
 
     to {
